@@ -2,7 +2,7 @@
 
 {% import "macro_functions.html.twig" as mf %}
 
-{% block meta_title %}{%trans 'Order confirm' %}{% endblock %}
+{% block meta_title %}{{ 'Order confirm' | trans }}{% endblock %}
 
 {% set cart = guest.cart_get %}
 
@@ -93,9 +93,9 @@
 								{% if client.client_is_taxable %}
 									{% set tax_rate = client.invoice_get_tax_rate %}
 									{% set tax_amount = cart.total * tax_rate / 100 %}
-									{{ 'VAT'%} ({{ tax_rate }}%): {{ tax_amount | money_convert }}<br />
-							{% endif
-							<strong>{% trans 'Total:' %} | trans }}</strong> {{ (cart.total + tax_amount) | money_convert }}
+									{{ 'VAT' | trans }} ({{ tax_rate }}%): {{ tax_amount | money_convert }}<br />
+							{% endif %}
+							<strong>{{ 'Total:' | trans }} | trans }}</strong> {{ (cart.total + tax_amount) | money_convert }}
 						</div>
 					
 						<form method="post" action="{{ 'api/client/cart/checkout'|link }}" class="api-form" data-api-jsonp="onAfterCartCheckout">
@@ -125,8 +125,8 @@
 							<p><button class="btn btn-success btn-lg" type="submit"><i class="fa fa-shopping-cart"></i> {{ 'Checkout' | trans }} {{ (cart.total + tax_amount) | money_convert }}</button></p>
 						</form>
 						{% else %}	
-						<div class="text-right"><strong>{{ 'Total:' | trans }}</strong> {{ (cart.total + tax_amount) | money_convert }} ({{ 'No VAT'%})</div>	
-						{% endif	
+						<div class="text-right"><strong>{{ 'Total:' | trans }}</strong> {{ (cart.total + tax_amount) | money_convert }} ({{ 'No VAT' | trans }})</div>	
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -134,7 +134,7 @@
 			
             {% if not client %}
 			<p class="text-center">
-					<a class="btn btn-primary btn-lg" data-toggle="tab" href="#signin">{% trans 'Sign in' %} | trans }}</a>
+					<a class="btn btn-primary btn-lg" data-toggle="tab" href="#signin">{{ 'Sign in' | trans }} | trans }}</a>
 					<a class="btn btn-success btn-lg" data-toggle="tab" href="#register">{{ 'Register' | trans }}</a>
 				</p>
 				<div id="myTabContent" class="tab-content">
