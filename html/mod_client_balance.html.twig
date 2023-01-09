@@ -7,16 +7,16 @@
 		<!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ 'Payments history'%}</h1>
+                <h1 class="page-header">{{ 'Payments history' | trans }}</h1>
             </div>
         </div>
         <!-- /.row -->
-{% endblock
+{% endblock %}
 {% block content %}
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th>{% trans 'Amount' %} | trans }}</th>
+                    <th>{{ 'Amount' | trans }}</th>
                     <th>{{ 'Description' | trans }}</th>
                     <th>{{ 'Date' | trans }}</th>
                 </tr>
@@ -51,7 +51,7 @@
 
 <div class="collapse well text-center" id="add_funds">
 	<form action="" method="post" class="api_form form-inline" data-api-url="client/invoice/funds_invoice" data-api-tocreated="{{ 'invoice'|link }}">
-        <legend>{{ 'Add funds in advance'%}<br /><small>{% trans 'You can add funds to your account if you have active order.' | trans }}</small></legend>
+        <legend>{{ 'Add funds in advance' | trans }}<br /><small>{{ 'You can add funds to your account if you have active order.' | trans }}</small></legend>
         <div class="control-group form-group">
 			<label>{{ 'Amount' | trans }}: </label>
 			<div class="input-group">
