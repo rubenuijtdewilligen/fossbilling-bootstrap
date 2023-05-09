@@ -33,9 +33,9 @@
 				<h4>{{post.updated_at|date('Y-m-d h:i')}}</h4>
                 <p>
 					{% if post.excerpt %}
-						{{post.excerpt|bbmd}}
+						{{post.excerpt|markdown}}
 					{% else %}
-						{{ post.content|bbmd }}
+						{{ post.content|markdown }}
 					{% endif %}
 				</p>
                 <a class="btn btn-primary" href="{{ '/news'|link }}/{{post.slug}}">{{ 'Read more..' | trans }} <i class="fa fa-angle-right"></i></a>

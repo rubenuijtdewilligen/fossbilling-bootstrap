@@ -19,7 +19,7 @@
         <!-- /.row -->
 {% endblock %}
 {% block content %}
-	{{article.content|bbmd}}
+	{{article.content|markdown}}
 	<hr>
 	<div class="well">
         <h4>{%trans 'Similar articles' %}</h4>

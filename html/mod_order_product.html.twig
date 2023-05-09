@@ -25,7 +25,7 @@
 			<form method="post" action="" class="api_form" data-api-url="guest/cart/add_item" data-api-redirect="{{ 'cart'|link }}">
 				<div class="row">
 						<div class="col-md-8">
-							{{ product.description|bbmd }}
+							{{ product.description|markdown }}
 							{% if product.form_id and guest.extension_is_on({"mod":"formbuilder"}) %}
 								{% include 'mod_formbuilder_build.html.twig' with product %}
 							{% endif %}

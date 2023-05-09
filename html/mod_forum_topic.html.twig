@@ -52,7 +52,7 @@
                 <h4 class="media-heading">{{ message.author.name }}
                     <small class="pull-right">{{ message.created_at|date('Y-m-d h:i') }}</small>
                 </h4>
-                <p>{{ message.message|bbmd }}</p>
+                <p>{{ message.message|markdown }}</p>
 			</div>	
         </div>
 		<hr>

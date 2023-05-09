@@ -32,7 +32,7 @@
 			<li class="list-group-item"><strong>{{ 'Order created' | trans }}:</strong> {{ order.created_at|date('Y-m-d h:i') }}</li>
 			<li class="list-group-item"><strong>{{ 'Activated at' | trans }}:</strong> {% if order.activated_at %}{{ order.activated_at|date('Y-m-d h:i') }}{% else %}-{% endif %}</li>
 			{% if order.period %}<li class="list-group-item"><strong>{{ 'Renewal date' | trans }}:</strong> {% if order.expires_at %}in {{ order.expires_at|daysleft }} day(s) ({{ order.expires_at|date('Y-m-d h:i') }}){% else %}-{% endif %}</li>{% endif %}
-			{% if order.notes %}<li class="list-group-item"><strong>{{ 'Order notes' | trans }}:</strong> {{ order.notes|bbmd }}</li>{% endif %}
+			{% if order.notes %}<li class="list-group-item"><strong>{{ 'Order notes' | trans }}:</strong> {{ order.notes|markdown }}</li>{% endif %}
 			{% if order.active_tickets > 0 %}<li class="list-group-item"><strong>{{ 'Active support tickets' | trans }}:</strong> <a href="{{ 'support'|link }}">{{ order.active_tickets }}</a></li>{% endif %}
 		
 			{% if order.group_master == 1 %}

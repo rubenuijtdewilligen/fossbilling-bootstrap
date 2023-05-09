@@ -10,7 +10,7 @@
 					{{ addon.title }}
 				</h4>
 				<p class="list-group-item-text form-inline">
-					{{ addon.description|bbmd }}
+					{{ addon.description|markdown }}
 					{% if addon.pricing.type is sameas('recurrent') %}
 					<div class="form-group">
 						<div class="input-group">
